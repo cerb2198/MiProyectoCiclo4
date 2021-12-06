@@ -1,0 +1,1 @@
+Servira para definir los modelos de datos que se iran a la base de datos.

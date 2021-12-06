@@ -1,0 +1,2 @@
+Sirve para poder almacenar por ejemplo variables de entorno, configuracion referente a la autenticación:
+modulos.

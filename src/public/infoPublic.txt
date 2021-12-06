@@ -1,0 +1,2 @@
+Aca iran todos los archivos estaticos que se quieran pintar por pantalla, ejemplo
+imagenes, codigos javascript, fuentes, archivos css etc.

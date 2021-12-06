@@ -1,0 +1,3 @@
+Esta carpera cumple la funcion de la creación de rutas, no solo basta con tener las vistas
+estas deben estar asociadas atraves de rutas, por lo cual en esta carpeta estaran las "direcciones"
+a cada una de las vistas.

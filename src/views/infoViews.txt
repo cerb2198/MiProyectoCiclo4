@@ -1,0 +1,3 @@
+Esta carpeta sirve para almacenar todas las vistas que se generen,
+es decir los HTML, pero para este caso serán extension .hbs (tambien
+podrían ser .handlebars) porque se usara el FrameWork handlebars.

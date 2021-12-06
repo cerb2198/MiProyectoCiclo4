@@ -1,0 +1,2 @@
+Esta carpeta es util para crear funciones para usar y echar mano a lo largo del proyecto web
+como generador de numero aleatorios, convertidor de numeros etc.
