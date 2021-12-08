@@ -9,8 +9,9 @@ routes.get('/singin',(req, res) => {
 routes.post('/singin', async (req, res) => {
     console.log("INGRESA");
     //ACA LO GUARDO EN 3 VARIABLES
-    const {user,email,password} = req.body;
-    const newUser = new User({user, email, password});
+    const {user,email,sobrenombre,password} = req.body;
+    console.log("Su apodo es:", sobrenombre);
+    const newUser = new User({user, email, sobrenombre, password});
     await newUser.save();
     res.redirect('/registroExitoso');
 });

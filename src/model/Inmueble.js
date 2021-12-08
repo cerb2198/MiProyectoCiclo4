@@ -8,6 +8,7 @@ const InmuebleSchema = new Schema({
     Habitaciones:{type:String, required:true},
     TipoApto:{type:String, required:true},
     imagenURL:{type:String, required:true},
+    antiguedad:{type:Number, required:false},
     date:{type:Date, default: Date.now}
 });
 
