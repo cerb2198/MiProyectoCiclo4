@@ -1,12 +1,19 @@
 
-<form action="/singin" method="POST">
-  <label for="name">Ingrese nombre</label>
-  <input id="name" name="user" type="text"><br>
-  <label for="apodo">Ingrese sobrenombre</label>
-  <input id="apodo" name="sobrenombre" type="text"><br>
-  <label for="correo">Ingrese correo</label>
-  <input id="correo" name="email" type="text"><br>
-  <label for="pass">Contraseña</label>
-  <input id="pass" name="password" type="password"><br>
-  <button type="submit">Enviar</button>
-</form>
+<div class='row'>
+  <div class='col-6'>
+    <form action="/singin" method="POST">
+      <label for="name">Ingrese nombre</label>
+      <input id="name" name="user" type="text"><br>
+      <label for="apodo">Ingrese sobrenombre</label>
+      <input id="apodo" name="sobrenombre" type="text"><br>
+      <label for="correo">Ingrese correo</label>
+      <input id="correo" name="email" type="text"><br>
+      <label for="pass">Contraseña</label>
+      <input id="pass" name="password" type="password"><br>
+      <button class='form-control' type="submit">Enviar</button>
+    </form>
+  </div>
+  <div class='col-6'>
+    <img src='../../images/imgSingIn.jpg' class='img-responsive'>
+  </div>
+</div>

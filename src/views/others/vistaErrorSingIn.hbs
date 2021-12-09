@@ -1,0 +1,18 @@
+<div class='row justify-content-center'>
+    <div class='row text-center'>
+        <p class="display-1 text-danger"><b>¡ERROR!</b></p>
+    </div>
+    <div class='row'>
+        <p class='h4 text-center'>
+             Error en el inicio de sesión, se encontraron los siguientes errores: 
+             <ol class='list-group list-group-numbered'>
+                 {{#each errorRegistro as |alias|}}
+                    <li class="list-group-item text-center text-warning"><b><i>{{alias}}</i></b></li>
+                {{/each}}
+             </ol>
+        </p>
+        <p class='h4 text-center'>
+               Por favor <a href="/singin" style="text-decoration: none;">ingrese</a> de nuevo.
+        </p>
+    </div>
+</div>

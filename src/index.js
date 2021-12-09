@@ -4,6 +4,7 @@ const path = require("path");
 const exphbs = require('express-handlebars');
 const methodOverride = require("method-override");
 const session = require("express-session");
+var cookieParser = require('cookie-parser');
 
 require('./database');
 
@@ -29,6 +30,9 @@ app.set('view engine','.hbs');
 antes de que llegen a las rutas*/
 
 app.use(express.urlencoded({extended:false}));
+/*Esta libreria cookie-Parser nos permite poder trabajar la persistencia de algunos
+datos que necesito que duren un rato en memoria*/
+app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(session({
     secret: 'mysecretapp',
