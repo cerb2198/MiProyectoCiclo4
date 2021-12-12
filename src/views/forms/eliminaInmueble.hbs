@@ -1,0 +1,34 @@
+<div class='row p-5'>
+    {{#each consultaDelete}}
+    <div class='col-4'>
+        <div class='card'>
+            <div class='card-body'>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <img class="card-img-top embed-responsive-item" src="{{imagenURL}}" />
+                </div>
+                <p>Ubicacion: {{ubicacion}}</p>
+                <p>Precio: {{precio}}</p>
+                <p>Numero de habitaciones: {{habitaciones}}</p>
+                <p>Tipo apto: {{tipoApto}}</p>
+                <p>Antiguedad: {{antiguedad}} meses</p>
+            </div>
+            <div class='card-footer'>
+                <div class="row">
+                    <div class="col-6">
+                        <form action='/editInmueble' method='POST'>
+                            <input type="hidden" class='btn-form' name='inmuebleId' value='{{_id}}'>
+                            <button class='btn btn-info'>Edita Inmueble</button>
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <form action='/deleteInmueble' method="POST">
+                            <input type="hidden" class='btn-form' name='idInmueble' value='{{_id}}'>
+                            <button class='btn btn-success btn-danger'>Eliminar Inmueble</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

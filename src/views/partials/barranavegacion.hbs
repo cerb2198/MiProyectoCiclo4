@@ -1,16 +1,34 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPHRvtFUvNT9Rrpz2HE4gu05hPPg8m7DweCg&usqp=CAU" style = "width: 20%;">
+    <div class="col-1">
+      <a class="navbar-brand" href="#">
+      <img src="https://png.pngtree.com/template/20191025/ourlarge/pngtree-home-house-real-estate-property-building-logo-vector-image_323427.jpg"
+        style="width: 80%;">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {{#if user}}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/perfil">Inicio</a>
+        </li>
+        {{else}}
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Inicio</a>
         </li>
+        {{/if}}
+        {{#if user}}
+        <li class="nav-item">
+          <a class="nav-link" href="/addInmueble" tabindex="-1" aria-disabled="true">Añade Inmueble</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/deleteInmueble" tabindex="-1" aria-disabled="true">Mis Inmuebles</a>
+        </li>
+        {{else}}
         <li class="nav-item">
           <a class="nav-link" href="/singin">Singin</a>
         </li>
@@ -20,6 +38,23 @@
         <li class="nav-item">
           <a class="nav-link" href="/about" tabindex="-1" aria-disabled="true">About</a>
         </li>
+        {{/if}}
+        {{#if user}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Perfil
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+            <li><a class="dropdown-item" href="/perfil/favoritos">Mis favoritos</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+          </ul>
+        </li>
+        {{/if}}
       </ul>
     </div>
   </div>

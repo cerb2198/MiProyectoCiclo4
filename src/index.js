@@ -5,8 +5,12 @@ const exphbs = require('express-handlebars');
 const methodOverride = require("method-override");
 const session = require("express-session");
 var cookieParser = require('cookie-parser');
+const passport = require('passport');
+
+
 
 require('./database');
+require('./config/passport');
 
 //SETTINGS
 /*Configruaciones del servidor*/
@@ -31,19 +35,32 @@ antes de que llegen a las rutas*/
 
 app.use(express.urlencoded({extended:false}));
 /*Esta libreria cookie-Parser nos permite poder trabajar la persistencia de algunos
-datos que necesito que duren un rato en memoria*/
+datos que necesito que duren un rato en memoria, especialmente util cuando necesito que algunos datos
+persistan cuando uso el metodo res.redirect()*/
 app.use(cookieParser());
 app.use(methodOverride('_method'));
+
+const filestore = require("session-file-store")(session)
+
 app.use(session({
     secret: 'mysecretapp',
     resave: true,
     saveUninitialized: true 
 }));
-console.log("1. Acá llega bien (final del middleware).")
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 //VARIABLES GLOBALES
 /*Se usara esta seccion para nombrar variables que se requieran que permanezcan a lo largo de la app*/
+
+app.use((req,res,next) =>{
+    app.locals.user = req.user || null;  
+    next();
+});
+
+
 
 //ROUTES
 /*Se establecen las rutas del proyecto*/

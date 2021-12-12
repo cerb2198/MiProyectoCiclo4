@@ -1,0 +1,50 @@
+<!--Este container tendra la imagen a un lado y las caracteristicas del inmueble al otro-->
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="embed-responsive embed-responsive-16by9">
+                <img class="card-img-top embed-responsive-item" src="{{consultaEdit.imagenURL}}" />
+            </div>
+        </div>
+        <div class="col-6">
+            <p>Ubicacion: {{consultaEdit.ubicacion}}</p>
+            <p>Precio: {{consultaEdit.precio}}</p>
+            <p>Numero de habitaciones: {{consultaEdit.habitaciones}}</p>
+            <p>Tipo apto: {{consultaEdit.tipoApto}}</p>
+            <p>Antiguedad: {{consultaEdit.antiguedad}} meses</p>
+            <p>Descripción: {{consultaEdit.descripcion}}</p>
+        </div>
+    </div>
+</div>
+
+<!--Formulario de modificacion-->
+<div class="container">
+    <div class="row">
+        <form action='/editInmueble/editado' method='POST'>
+            <input type="hidden" class='btn-form' name='ubicacion' value='{{consultaEdit.ubicacion}}'>
+            <div class='form-group my-4'>
+                <label for="price">Precio</label>
+                <input id='price' type="number" placeholder="{{consultaEdit.precio}}" value='{{consultaEdit.precio}}' name='precio'>
+            </div>
+            <div class='form-group my-4'>
+                <label for="Hab">Habitaciones</label>
+                <input id='Hab' type="number" placeholder="Numero Habitaciones" value='{{consultaEdit.habitaciones}}' name='habitaciones'>
+            </div>
+            <input type="hidden" class='btn-form' name='tipoApto' value='{{consultaEdit.tipoApto}}'>
+            <div class='form-group my-4'>
+                <label for='tDes'>Añada una descripción</label>
+                <input id='tDes' type='text' style='height:100px' size='50' value='{{consultaEdit.descripcion}}' name='descripcion'>
+            </div>
+            <div class='form-group my-4'>
+                <label for="Ant">Antiguedad</label>
+                <input id='Ant' type="number" placeholder="Antiguedad (meses)" value='{{consultaEdit.antiguedad}}' name='antiguedad'>
+            </div>
+            <div class='form-group my-4'>
+                <label for='img'>Link imagen</label>
+                <input id='img' type='text' size='50' value='{{consultaEdit.imagenURL}}' name='imagenURL'>
+            </div>
+            <button class='btn btn-primary' type="submit">Enviar</button>
+            <button class='btn btn-success' type="reset">Limpiar</button>
+        </form>
+    </div>
+</div>

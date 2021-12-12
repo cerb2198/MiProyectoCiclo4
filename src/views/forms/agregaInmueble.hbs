@@ -1,0 +1,57 @@
+<div class='row'>
+
+</div>
+
+<div class='row'>
+    <div class='col-4'>
+    </div>
+    <div class='col-4'>
+        <div class='card'>
+            <div class='card-header'>
+                <p class='h3'>Agrega Inmueble</p>
+            </div>
+            <div class='card-body'>
+                <form action='/addInmueble' method='POST'>
+                    <div class='form-group my-4'>
+                        <label for='ubi'>Ubicación</label>
+                        <select id="ubi" name="ubicacion" class="form-control">
+                            <option>Zona Sur</option>
+                            <option>Zona Norte</option>
+                            <option>Zona Este</option>
+                        </select>
+                    </div>
+                    <div class='form-group my-4'>
+                        <label for="price">Precio</label>
+                        <input id='price' type="number" placeholder="COP" name='precio'>
+                    </div>
+                    <div class='form-group my-4'>
+                        <label for="Hab">Habitaciones</label>
+                        <input id='Hab' type="number" placeholder="Numero Habitaciones" name='habitaciones'>
+                    </div>
+                    <div class='form-group my-4'>
+                        <label for='tApto'>Tipo Apto</label>
+                        <select id="tApto" name="tipoApto" class="form-control" name='tipoApto'>
+                            <option>Casa</option>
+                            <option>Apartamento</option>
+                            <option>Oficina</option>
+                        </select>
+                    </div>
+                    <div class='form-group my-4'>
+                        <label for='tDes'>Añada una descripción</label>
+                        <input id='tDes'type='text' style='height:100px' size='50'  name='descripcion'>
+                    </div>
+                    <div class='form-group my-4'>
+                        <label for="Ant">Antiguedad</label>
+                        <input id='Ant' type="number" placeholder="Antiguedad (meses)"  name='antiguedad'>
+                    </div>
+                    <div class='form-group my-4'>
+                        <label for='img'>Link imagen</label>
+                        <input id='img' type='text' size='50' name='imagenURL'>
+                    </div>
+                    <button class='btn btn-primary' type="submit">Enviar</button>
+                    <button class='btn btn-success' type="reset">Limpiar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

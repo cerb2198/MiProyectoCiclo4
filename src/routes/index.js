@@ -7,7 +7,7 @@ routes.get('/', (req, res) => {
 });
 
 routes.get('/about', (req, res) => {
-    res.render('about')
+    res.render('about');
 });
 
 module.exports = routes;

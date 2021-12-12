@@ -1,16 +1,81 @@
-<div class='row'>
-    {{#each objeto}}
-    <div class='col-6'>
+<div class='row text-center'>
+    <h1 class='display-3'>¡Bienvenido {{#each nombreUsuarioLog}} {{user}} {{/each}}!</h1>
+    <!--En esta parte se genera un formulario para filtro-->
+    <form>
+        <div class='row'>
+            <div class='col-3'>
+                <div class='form-group'>
+                    <label for="fUbicacion" class="form-label">Ubicaciones</label><br>
+                    <select id='fUbicacion' style="width:200px;">
+                        <option value=""></option>
+                        {{#each listaInmuebles}}
+                        <option>{{ubicacion}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+
+            <div class='col-7'>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                        value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Hasta 500.000 COP
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                        value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Hasta 1'000.000 COP
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
+                        value="option3">
+                    <label class="form-check-label" for="exampleRadios3">
+                        Hasta de 2'000.000 COP
+                    </label>
+                </div>
+            </div>
+            <div class='col-2'>
+                <button class='btn btn-success'>Filtrar</button><br>
+                <button class='btn btn-success my-3' type='reset'>Limpiar</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+<div class='row p-5'>
+    {{#each listaInmuebles}}
+    <div class='col-4'>
         <div class='card'>
-        <div class='card-header'>
-            <p class='h1' style="font-family: cursive; color:blue"><b>Informacion</b></p>
-        </div>
-        <div class='card-body text-center'>
-            <p>Nombre: {{nombre}}</p>
-            <p>Edad: {{edad}}</p>
-            <p>Tipo de acceso: {{tipo}}</p>
+            <div class='card-body'>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <img class="card-img-top embed-responsive-item" src="{{imagenURL}}" />
+                </div>
+                <p>Ubicacion: {{ubicacion}}</p>
+                <p>Precio: {{precio}}</p>
+                <p>Numero de habitaciones: {{habitaciones}}</p>
+                <p>Tipo apto: {{tipoApto}}</p>
+                <p>Antiguedad: {{antiguedad}} meses</p>
+            </div>
+            <div class='card-footer'>
+                <form action="/perfil/favoritos" method="POST">
+                <!--ubicacion, precio, habitaciones, tipoApto, descripcion, antiguedad, imagenURL-->
+                    <input type="hidden" class='btn-form' name='inmuebleId' value='{{_id}}'>
+                    <input type="hidden" class='btn-form' name='ubicacion' value='{{ubicacion}}'>
+                    <input type="hidden" class='btn-form' name='precio' value='{{precio}}'>
+                    <input type="hidden" class='btn-form' name='habitaciones' value='{{habitaciones}}'>
+                    <input type="hidden" class='btn-form' name='tipoApto' value='{{tipoApto}}'>
+                    <input type="hidden" class='btn-form' name='descripcion' value='{{descripcion}}'>
+                    <input type="hidden" class='btn-form' name='antiguedad' value='{{antiguedad}}'>
+                    <input type="hidden" class='btn-form' name='imagenURL' value='{{imagenURL}}'>
+                    <button class='btn btn-success'>Añadir a favoritos</button>
+                </form>
+            </div>
         </div>
     </div>
-    </div>
-{{/each}}
+    {{/each}}
+
 </div>

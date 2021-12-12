@@ -4,15 +4,15 @@
     </div>
     <div class='row'>
         <p class='h4 text-center'>
-             Error en el registro del usuario, se encontraron los siguientes errores: 
+             Error en el inicio de sesión, se encontraron los siguientes errores: 
              <ol class='list-group list-group-numbered'>
-                 {{#each errorRegistro as |alias|}}
+                 {{#each errorLogin as |alias|}}
                     <li class="list-group-item text-center text-warning"><b><i>{{alias}}</i></b></li>
                 {{/each}}
              </ol>
         </p>
         <p class='h4 text-center'>
-               Por favor <a href="/singin" style="text-decoration: none, color:brown;">ingrese</a> de nuevo.
+               Por favor <a href="/login" style="text-decoration: none, color:brown;">ingrese</a> de nuevo.
         </p>
     </div>
 </div>
