@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cod": "npx nodemon src/index.js"
+    "start": "npx nodemon src/index.js"
   },
   "author": "Carlos Burbano",
   "license": "ISC",
